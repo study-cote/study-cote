@@ -10,6 +10,7 @@ map <char, char> pr; // pair map
 int check_end(char tmp) {
     if (tmp == ')' || tmp == ']'
     || tmp == '}' || tmp == '>') { // is end char
+        return 1;
     }
     
     return 0; // is not
@@ -57,9 +58,8 @@ int main(void) {
         
         // print answer
         cout << "#" << t << " " << ans << endl; 
-
-        free(arr);
     }
 
+    free(arr);
     return 0;
 }
