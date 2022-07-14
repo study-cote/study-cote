@@ -5,8 +5,6 @@ using namespace std;
 
 int map[100][100];
 int trail[100][100];
-int up[1][2] = {{-1, 0}}; // up
-int dir[2] = {-1, 1}; // left, right
 
 int traverse(int col) {
     int row = length-1;
