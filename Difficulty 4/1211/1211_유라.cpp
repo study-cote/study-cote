@@ -7,18 +7,17 @@ int map[100][100] = {0};
 int trail[100][100] = {0};
 int min_dist = 99999, start_col = 0;
 
-void traverse(int row, int col) {
-    int dist = 1;
-
+void traverse(int col) {
+    int row = 0, dist = 1, idx = col;
     trail[row][col] = 1;
 
-    while(row > 0) {
+    while(row < MAX-1) {
         if (col-1 >= 0 && map[row][col-1] == 1 && !trail[row][col-1])
             col -= 1;
         else if (col+1 < MAX && map[row][col+1] == 1 && !trail[row][col+1])
             col += 1;
         else 
-            row -= 1;
+            row += 1;
 
         trail[row][col] = 1;
         dist += 1; // update dist
@@ -26,7 +25,7 @@ void traverse(int row, int col) {
 
     if (dist <= min_dist) {
         min_dist = dist;
-        start_col = col;
+        start_col = idx;
     }
 
     return;
@@ -41,15 +40,15 @@ int main(void) {
         for (int i=0; i<100; i++) {
             for (int j=0; j<100; j++) {
                 scanf("%d", &map[i][j]);
-                trail[i][j] = 0; // init
             }
         }
 
         min_dist = 99999;
 
         for (int i=0; i<100; i++) {
-            if (map[MAX-1][i]) { // start point
-                traverse(MAX-1, i);
+            if (map[0][i]) { // start point
+                fill(&trail[0][0], &trail[MAX-1][MAX], 0); // init
+                traverse(i);
             }
         }
 
