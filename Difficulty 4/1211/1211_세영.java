@@ -13,7 +13,7 @@ public class D4_1211 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 		StringBuilder sb = new StringBuilder();
-		
+	
 		for (int t = 1; t <= 10; t++) {
 			br.readLine();
 			for (int i = 0; i < 100; i++) {
