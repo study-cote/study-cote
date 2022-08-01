@@ -35,14 +35,13 @@ int bfs_node(int start_row, int start_col, int end_row, int end_col) {
                 q[tail++][1] = next_col;
                 visited[next_row][next_col] = visited[curr_row][curr_col] + 1;
             }
+            
+            if (next_row == end_row && next_col == end_col) {
+                return visited[end_row][end_col];
+            }
         }
     }
-    
-    int ans = visited[end_row][end_col];
-    
-    if (ans == 0)
-        return -1;
-    return ans;
+    return -1;
 }
 
 int bfs(int x1, int y1, int x2, int y2) {
