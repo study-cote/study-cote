@@ -13,7 +13,6 @@ void bfs_init(int map_size, int map[10][10]) {
 int bfs_node(int start_row, int start_col, int end_row, int end_col) {
     int q[100][2] = {0};
     int visited[11][11] = {0};
-    int dir[4][2] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     int front = 0, tail = 0;
     
     q[tail][0] = start_row;
