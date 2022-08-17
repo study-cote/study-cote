@@ -52,6 +52,7 @@ string maxPrize(string num, int ex) {
             exCnt++;
 
             // 최대치에 도달했을 경우, 체크하고 반복문 해제
+            // 처음에 검사하지 않는 이유 -> 동일 숫자 있는지 체크해야 함 (for문 돌아야 함)
             if (num == maxNum) {
                 changeFlag = true;
                 break;
